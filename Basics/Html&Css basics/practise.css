@@ -1,0 +1,255 @@
+/* div{
+    background-color: blue;
+} */
+/* question2 */
+/* .heading
+{
+    color:red;
+} */
+/* question3 */
+/* button{
+    background-color: green;
+} */
+
+/* parctise set 2 */
+/* question1 */
+/* #heading
+{
+    text-align: center;
+    text-transform: capitalize;
+} */
+
+/* question2 */
+/* *{
+    font-family: 'Times New Roman';
+} */
+/* question 3 */
+/* #outer
+{
+    font-size: 25px; 
+} */
+/* #inner
+{
+    font-size: 10px;
+} */
+
+
+/* practise set 3 */
+/* div
+{
+    height: 100px;
+    width:100px;
+    background-color: green;
+    border-radius: 50%;
+} */
+  
+/* amazon search bar  */
+
+/* *{
+    padding:0;
+    margin:0;
+    color: white;
+    
+}
+#navbar{
+    height: 60px;
+    background-color: black;
+}
+button{
+    background-color: #f08804;
+}
+#logo
+{
+    color:#f08804;
+    font-size: 25px;
+}
+a{
+    margin-right: 200px;
+    text-decoration: none;
+}
+input
+{
+    color:black;
+} */
+
+
+/* practise set 4 */
+/* amazon website in short */
+/* *{
+    padding:0;
+    margin:0;
+    
+    
+}
+#navbar{
+    height: 60px;
+    background-color: black;
+    color: white;
+}
+button{
+    background-color: #f08804;
+    color: white;
+}
+#logo
+{
+    margin-left: 2px;
+    color:#f08804;
+    font-size: 25px;
+}
+a{
+    margin-left: 200px;
+    text-decoration: none;
+    color: white;
+}
+input
+{
+    margin-left: 200px;
+}
+
+
+
+.contentbox{
+    height: 100px;
+    width: 100px;
+    border: 2px,solid,black;
+    display: inline-block;
+    
+}
+#content{
+    height: 570px;
+}
+footer{
+    background-color: black;
+    color: white;
+    text-align:center;
+} */
+
+/* practise set5  */
+ /* div{
+    height: 200px;
+    width: 200px;
+    background-color: red;
+    background-image: url("EVERGREENS\ 20170826_080017.jpg");
+    background-size: cover;
+    position:fixed;
+    right: 0px;
+    top:50px;
+    fixed is used ass the div will be fixed to the page and will not move on scroll 
+    if we used absolute it will be place according to the postion of brouser 
+    relative will be placed within the distance of the parent class or relative classs
+ } */
+
+
+ /* practise set6 */
+
+ 
+ 
+ /* #navbar
+ {
+    background-color: palevioletred;
+    display: flex;
+    justify-content: space-evenly;
+ }
+ li{
+    list-style-type: none;
+ }
+ a{
+    text-decoration: none;
+    color: rgb(236, 21, 57);
+ } */
+ 
+ /* que2 */
+
+ /* .outer
+ {
+    height:400px;
+    width:400px;
+    background-color: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+ }
+ .inner
+ {
+    height: 200px;
+    width: 200px;
+    background-color: red;
+    
+ } */
+
+ /* align items is used for container itself 
+ and align self is used for individual flex items and has highest priority then align items.
+ write  in the above example we right inner function above outer  
+ and we have written align self in inner ass flex start it will follow it 
+ even though outter is written after.  align self which is written in flex items has the highest priority  */
+
+
+
+ /* practise set7 */
+  /* div{
+    height:200px;
+    width: 200px;
+    background-color: purple;
+ }
+    @media(max-width:300px)
+    {
+        div
+        {
+            background-color: green;
+        }
+       
+
+    }
+    @media(min-width:300px) and (max-width:400px)
+    {
+        div
+        {
+            background-color: pink;
+        }
+    }
+
+    @media(min-width:400px) and (max-width:600px)
+    {
+        div
+        {
+            background-color: red;
+        }
+    }
+    @media(min-width:600px) 
+    {
+        div
+        {
+            background-color: blue;
+        }
+    }
+   */
+
+
+   /* practise set 8 */
+   /* create a loading symbol using html and css  */
+   /* div{
+    height: 200px;
+    width: 200px;
+    border-radius: 50%;
+     border: 20px solid blue;
+    border-top: 20px solid  black;
+    animation: animate 2s ease-in-out 0s infinite normal  ; */
+    /* animation: name ,duration,timing function(animation style ),delay,iteration count,direction
+     */
+   /* }
+   @keyframes animate
+   {
+    from
+    {
+        transform: rotate(0deg);
+    }
+    to
+    {
+        transform: rotate(360deg);
+    }
+
+   } */
+
+
+
+   

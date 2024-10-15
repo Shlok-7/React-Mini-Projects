@@ -1,0 +1,503 @@
+All about React 
+
+->It is a platform Independent 
+->requires a code editior and node js gives environment 
+
+
+Vite (bundler)
+
+react       react dom (websites)
+                react navtive (mobile apps)
+
+1> CREATE REACT PROJECTS:
+
+1.create basic react
+create: npx create-react-app 01basicreact
+takes time... to install... 
+
+in package.json checks the version and scripts inbulit in react 
+
+to start in console  dir
+                                     npm run start 
+
+npm run bulid create build folter all static classes ,js folder
+
+->delete unwanted files(setup,logo,app.test)
+->index.js, App.js  remains
+
+
+2. Vite (bundler)
+create: npm  create vite@latest
+project name-01vitereact
+framework-react
+variant-js
+
+No Node modules
+
+in console : cd 01vitereact
+                       ls
+                        npm install(install req packages)
+                      npm run dev (hosts the website and redirects)
+
+-> src :delete logo,app.css,index.css
+-> App.jsx,main.jsx   remains
+
+To run: npm run dev
+
+
+
+2>UNDERSTAND REACT FLOW AND STRUCTURE 
+
+How js inejcts in html....
+
+1. basic react
+-->src: index.js
+
+->react(core foundational library),
+reactdom (implemantaion for web)
+libraries for manipulating dom 
+
+->React dom : tree structure ,
+react creates it own dom and compares with main dom 
+
+root.render() 
+custom tags 
+
+
+--> App.js
+app () is a function which return html
+(with the help of js we can write html) 
+
+how it is able to inject in index.html as we have not have written script tage
+but in package.json there is  inbuilt scripts tags which indirectly written the script tah in html while executing of the code 
+-> we can create new file with js extension 
+start with uppercase 
+
+
+2. Vite 
+no scripts tags in package.json 
+load directly in html with script tags 
+
+--> main.jsx
+
+
+-->App.jsx(it is a component)
+
+->We can  create new file (new component)
+Create a file with .jsx, Start the file upper case 
+
+
+->jsx returns only one element , it is a common problem in react so we use div of fregment<>
+so we can write everything inside it 
+
+
+
+3> CREATE YOUR OWN REACT LIBRARY AND JSX 
+
+Here we create index.html,customreact.js 
+-> in customreact.js 
+we create the  custom react element 
+also we create custom render function 
+
+
+VITE
+-> In Main.jsx we can cerate custom react element as vite does pasring which understant its elment and render 
+->there is some syntax to call the element
+
+//syntax
+const reactElement=React.createElement('a',
+{href:'https://google.com',target:'_blank'},
+'click me to visit google ',
+Variable )
+
+-> In App.jsx 
+If we try to declare a varible inside in the function App()
+{     const username="chai aur code"
+       return ( 
+       <>
+      <Chai>
+      <h1> chai aur react { username} </h1>
+      </>
+)
+}
+
+// to call the variable username we use currly bracket --> It is called evaluated expression 
+
+
+4>WHEN YOU NEED HOOKS AND PROJECTS
+// To locate the file 01vitereact
+just type in th terminal cd -> ls-> cd 01vitereact -> npm run dev 
+
+
+HOOKS: Special methods to update  data 
+In React, hooks are special functions that let you use state and other React features in functional components. They allow you to "hook" into React's lifecycle and state management without using class components.
+
+1>useState= state ko change krne ke liye reponsible 
+
+What it does: It allows you to add state to your functional components.
+How it works: It returns an array where the first element is the current state value, and the second element is a function to update that state.
+
+ let [counter,setCounter] =useState(15)
+
+ setCounter(counter )
+
+ it will update the ui of the webpage also it will scan the whole webpage and see where there is counter variable abd will increment it so thw ui of the webpage also get affected 
+
+eg>
+import React, { useState } from 'react';
+
+function Counter() {
+  // Declare a state variable called "count", initialized to 0
+  const [count, setCount] = useState(0);
+
+  return (
+    <div>
+      <p>You clicked {count} times</p>
+      <button onClick={() => setCount(count + 1)}>
+        Click me
+      </button>
+    </div>
+  );
+}
+
+useState(0) initializes the state to 0.
+setCount updates the count value when the button is clicked.
+
+
+ 5> VIRTUAL DOM,FIBRE AND RECONCILLATION 
+ 
+ createRoot method working :-
+ createRoot= creates dom behind the scene so can comaperes withe main dom and updates whatever upadtes is done to the ui .
+read this document
+https://github.com/acdlite/react-fiber-architecture
+
+
+
+
+6> TAILWIND AND PROPS IN REACTJS
+
+
+Tailwind is utility of css , very similar to css .
+Need to close the tags for eg <img> tag 
+
+PROPS
+For reusalibilty , one card used for multiple times like an amazon clone multiple cards
+
+
+Make a new folder name components 
+name crad.jsx
+
+install extension react snippet
+type  rfce    which gives react boiler plate 
+
+
+For every card to be unique we use props 
+
+in app.jsx import card.jsx
+
+
+so in app.jsx inside <>
+<card username="chaiaurcode" />
+<card username ="hitesh" />
+
+
+inside card.jsx
+for function Card(props)// add the props as it was not in the brackets 
+ console.log(props.username);
+
+ instead of writting props.username again and again we destructure it we make it 
+
+ function Card({username})
+ {
+  console.log(username);
+ }
+
+so where we want to make changes inisde the hmtl add the variable {username}
+
+
+
+so whenever we write the above contents in app.jsx   we are calling it so we can see multiple cards we can now change what we want to do 
+
+
+
+If we want to change the multiple features of the card 
+<card username="chaiaurcode"  btnText="clickme"/>
+<card username ="hitesh" btnText="visit me" />
+
+
+by writing this only we cannot see the button text to change because we have not handle the btnText variable inside crad.jsx 
+
+
+so in card.jsx we do 
+function Card({username, btnText})
+
+
+and pass the variable inside button tag
+{btn.text}
+
+
+
+
+
+7> A REACT INTERVIEW QUE ON COUNTER 
+
+suppose in a element consider here app.jsx 
+you have function App()
+
+function App()
+{
+  const [counter, setCounter] = useState(15);
+
+  const addValue=()=>{
+    setCounter(counter+1);
+  }
+  const subtractValue=()=>{
+    setCounter(counter-1);
+ }
+}
+
+so in the add value you duplicate the line 
+setCounter(counter+1);
+setCounter(counter+1);
+setCounter(counter+1);
+setCounter(counter+1);
+
+
+
+so what will happen when you click on the button . Tell without executing
+
+so the concept is that when similar statements are seen in th addValue . As we know useState passes the value in the batches so whenever it comes to setCounter(counter+1); line and sees same line , it consider it as batch and sees that the same operation is done on the next line  and execute it once only . So when we click on the button it increments only once , so onclicking it will 16, then again clicking it will be 17 and so on
+
+
+when we have a situation i want to update it like that only then   
+setCounter(prevCounter=> prevCounter+1)
+
+prevCounter gives existing state 
+In setCounter it gives call back which is hidden feature so whenever we give prevCounter which is previous  returned element we +1 .
+
+we can any name to it not compulsory to use prevCounter (its for understanding only) we can give counter=> counter+1; also
+
+but give it one name only dont give prevCounter and counter both it will create confusion. 
+
+
+
+
+8>PROJECT BACKGROUND CHANGER 
+
+ create a project using vite 
+ run all the tailwinds in  terminals from their website 
+
+ in app.jsx
+
+
+
+ import { useState } from "react"
+
+
+function App() {
+  const [color, setColor] = useState("olive")
+
+  return (
+    <div className="w-full h-screen duration-200"
+    style={{backgroundColor: color}}
+    >
+      <div className="fixed flex flex-wrap justify-center bottom-12 inset-x-0 px-2">
+        <div className="flex flex-wrap justify-center gap-3 shadow-lg bg-white px-3 py-2 rounded-3xl">
+          <button
+          onClick={() => setColor("red")}
+          className="outline-none px-4 py-1 rounded-full text-white shadow-lg"
+          style={{backgroundColor: "red"}}
+          >Red</button>
+          <button
+          onClick={() => setColor("green")}
+          className="outline-none px-4 py-1 rounded-full text-white shadow-lg"
+          style={{backgroundColor: "green"}}
+          >Green</button>
+          <button
+          onClick={() => setColor("blue")}
+          className="outline-none px-4 py-1 rounded-full text-white shadow-lg"
+          style={{backgroundColor: "blue"}}
+          >Blue</button>
+        </div>
+      </div>
+    </div>
+  )
+}
+
+export default App
+
+
+onClick={() => setColor("blue")}
+why we wrote like this only using call back function ()=> , why we have not passed directly onClick={setColor} as we have declared a function also above the reason is 
+
+OnClick method  expects to pass function but while passing onClick={setColor} we are the passing the refernce of the function so we cant pass the paramaters inside it 
+so even we pass onClick={setColor("")}  this give syntacx problem for onClick and OnClick needs the function not the value returned from the function , it needs function only 
+
+so when we write onClick={setColor}  it was correct but 
+when we wrote this onClick={setColor()} it return the value returned from the function, so we are passing the returned value and we want to pass the paramaters also where it wil give us the problem 
+
+so instead we write this
+onClick={() => setColor("blue")}
+we use callback function ()=> 
+as onClick need function only so we use onClick where we call the setColor , here we are calling function iside function which will work here 
+
+
+
+
+
+
+9>useEffect,useRef and useCallback 
+
+
+
+
+
+useEffect
+useEffect is a hook in React that allows you to perform side effects in your components. Side effects
+are actions that can change the state of your application, such as making API calls, updating the DOM
+, or setting timers. The useEffect hook takes two arguments: a function to run and an array of
+dependencies. The function is run after every render, and the dependencies array determines when the
+function is run again.
+
+What it does: It lets you perform side effects in function components, such as fetching data, directly interacting with the DOM, or setting up subscriptions.
+How it works: It runs after the render and can clean up resources when needed.
+
+eg>
+import React, { useState, useEffect } from 'react';
+
+function Timer() {
+  const [time, setTime] = useState(0);
+
+  // useEffect to update time every second
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setTime((prevTime) => prevTime + 1);
+    }, 1000);
+
+    // Cleanup on component unmount
+    return () => clearInterval(interval);
+  }, []);  // Empty dependency array means it runs once after the initial render
+
+  return <p>Timer: {time} seconds</p>;
+}
+
+The useEffect hook runs the timer when the component mounts.
+The return function clears the interval when the component unmounts.
+
+
+
+
+
+
+useCallback
+useCallback is a React hook used to optimize the performance of your app. It memoizes a function, meaning it saves a version of the function and reuses it, instead of creating a new one every time the component renders.
+
+This is useful in certain cases when passing functions to child components or handling complex states where you want to avoid unnecessary re-renders.
+
+Why do we need useCallback?
+In React, every time a component re-renders, all the functions inside that component are recreated. If you're passing these functions down as props, the child components might also re-render unnecessarily, which can slow down the app.
+
+useCallback helps by ensuring that the same function is returned between renders (unless its dependencies change). This can prevent unnecessary re-renders and improve performance.
+
+What it does: It returns a memoized callback function that doesn’t change unless one of its dependencies changes. This is useful for optimizing performance by preventing unnecessary re-creation of functions.
+Functionality: Returns a cached version of a function that only changes if its dependencies change.
+How it works: You pass a function and a dependency array. The function is only recreated if one of the dependencies changes.
+
+eg>
+import React, { useState, useCallback } from 'react';
+
+function Parent() {
+  const [count, setCount] = useState(0);
+
+  // useCallback memoizes the function, so it is not recreated on every render
+  const increment = useCallback(() => {
+    setCount(count + 1);
+  }, [count]);  // Only recreate the function if "count" changes
+
+  return (
+    <div>
+      <p>Count: {count}</p>
+      <Child increment={increment} />
+    </div>
+  );
+}
+
+function Child({ increment }) {
+  console.log("Child component rendered!");
+  return <button onClick={increment}>Increment</button>;
+}
+
+useCallback will store the increment function and only recreate it if the dependency (count) changes.
+As a result, the Child component won’t re-render unnecessarily since it gets the same increment function on every render, unless count changes.
+
+Key Takeaways:
+Performance optimization: useCallback is helpful when passing functions to child components that don’t need to re-render unnecessarily.
+Dependency array: The function will only be recreated if one of the items in the dependency array changes.
+Best for certain cases: Use it when you notice performance issues or want to prevent unnecessary re-renders of child components.
+
+
+
+
+
+useRef
+
+useRef is a React hook that gives you access to a mutable object which you can store values in. This object persists across renders, meaning that updates to it do not cause the component to re-render. It's often used to directly manipulate DOM elements or hold data that shouldn’t trigger a re-render when updated.
+
+
+Key uses of useRef:
+Accessing DOM elements (e.g., focusing an input field).
+Storing mutable values across renders without causing re-renders.
+Keeping track of previous values or states.
+
+How useRef Works:
+useRef returns an object that has a property called .current.
+This .current property is initially set to the value you provide to useRef().
+You can update .current to store any value, and it will remain available between renders without causing the component to re-render.
+
+
+What it does: It provides a way to access DOM elements or persist values across renders without causing re-renders.
+How it works: It returns a mutable object with a .current property that you can set or read.
+
+
+eg>
+import React, { useRef } from 'react';
+
+function FocusInput() {
+  // Create a ref to store the input element
+  const inputRef = useRef(null);
+
+  // Function to focus the input field
+  const focusInputField = () => {
+    inputRef.current.focus();  // Directly access the DOM element and focus it
+  };
+
+  return (
+    <div>
+      <input ref={inputRef} type="text" placeholder="Click the button to focus me" />
+      <button onClick={focusInputField}>Focus the input</button>
+    </div>
+  );
+}
+
+export default FocusInput;
+useRef(null) creates a reference to store the input DOM element.
+The ref={inputRef} is attached to the input field. This connects the inputRef to the input element, allowing us to interact with it.
+Clicking the button calls focusInputField(), which focuses the input field using inputRef.current.focus().
+The beauty is that changing the inputRef.current value does not cause the component to re-render.
+
+
+
+
+
+
+
+Summary:
+useState: Manage local state in functional components.
+useEffect: Perform side effects (e.g., fetching data, timers).
+useRef: Access DOM elements or persist data across renders without triggering re-renders.
+useCallback: Memoize functions to avoid unnecessary re-creation and improve performance.
+
+
+
+
+
